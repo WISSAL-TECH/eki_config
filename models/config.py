@@ -1,5 +1,12 @@
 from odoo import models, fields, api
 
+
+class ResCompany(models.Model):
+    _inherit = 'res.company'
+
+    domain = fields.Char('domain')
+
+
 class ResConfig(models.TransientModel):
     _inherit = 'res.config.settings'
 
@@ -8,17 +15,25 @@ class ResConfig(models.TransientModel):
     internal_project_id = fields.Char()
     leave_timesheet_task_id = fields.Char()
 
-    def set_values(self):
-        """employee setting field values"""
-        res = super(ResConfig, self).set_values()
-        self.env['ir.config_parameter'].set_param('eki_config.domain', self.domain)
+    @api.model
+    def get_values(self):
+        """ getting field values"""
+        res = super(ResConfig, self).get_values()
+        company = self.env.company
+
+        company and res.update(
+            domain =company.domain,
+
+        )
         return res
 
-    def get_values(self):
-        """employee limit getting field values"""
-        res = super(ResConfig, self).get_values()
-        value = self.env['ir.config_parameter'].sudo().get_param('eki_config.domain')
-        res.update(
-            domain=str(value)
-        )
+    def set_values(self):
+        """setting field values"""
+
+        res = super(ResConfig, self).set_values()
+        company = self.env.company
+        company and company.write({
+            'domain': self.domain,
+
+        })
         return res
