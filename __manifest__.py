@@ -30,6 +30,7 @@
         'security/ir.model.access.csv',
 
         'views/eki_config_inherit.xml',
+        'views/eki_company_inherit.xml',
 
     ],
     # only loaded in demonstration mode
