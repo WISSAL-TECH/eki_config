@@ -4,7 +4,8 @@ from odoo import models, fields, api
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    domain = fields.Char('domain')
+    domain = fields.Char('Domain')
+    codification = fields.Char('Codification')
 
 
 class ResConfig(models.TransientModel):
