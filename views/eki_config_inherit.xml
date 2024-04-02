@@ -18,6 +18,7 @@
                             <div class="o_setting_right_pane">
                                 <span class="o_form_label">Domain</span>
                                 <div>
+                                    <field name="company"/>
                                     <field name="domain"/>
                                 </div>
                             </div>
