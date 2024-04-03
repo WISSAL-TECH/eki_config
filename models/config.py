@@ -5,13 +5,15 @@ class ResCompany(models.Model):
     _inherit = 'res.company'
 
     domain = fields.Char('Domain')
+    domain_cpa = fields.Char('Domain CPA')
     codification = fields.Char('Codification')
 
 
 class ResConfig(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    domain = fields.Char(string="Domain", store=True)
+    domain = fields.Char(string="Domain ALSALAM", store=True)
+    domain_cpa = fields.Char(string="Domain CPA", store=True)
 
     internal_project_id = fields.Char()
     leave_timesheet_task_id = fields.Char()
@@ -24,6 +26,7 @@ class ResConfig(models.TransientModel):
 
         company and res.update(
             domain =company.domain,
+            domain_cpa =company.domain_cpa,
 
         )
         return res
@@ -35,6 +38,7 @@ class ResConfig(models.TransientModel):
         company = self.env.company
         company and company.write({
             'domain': self.domain,
+            'domain_cpa': self.domain_cpa,
 
         })
         return res

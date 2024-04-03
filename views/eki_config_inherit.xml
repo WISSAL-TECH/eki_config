@@ -20,6 +20,7 @@
                                 <div>
                                     <field name="company"/>
                                     <field name="domain"/>
+                                    <field name="domain_cpa"/>
                                 </div>
                             </div>
                         </div>
