@@ -15,6 +15,7 @@ class ResCompany(models.Model):
     pos_wilaya = fields.Char('wilaya')
     pos_commune = fields.Char('commune')
     ek_user_emails = fields.Char('users')
+    create_by = fields.Char('create_by')
 
 
 class ResConfig(models.TransientModel):
