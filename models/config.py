@@ -7,6 +7,7 @@ class ResCompany(models.Model):
     domain = fields.Char('Domain')
     domain_cpa = fields.Char('Domain CPA')
     codification = fields.Char('Codification')
+    source = fields.Char('source')
 
 
 class ResConfig(models.TransientModel):
