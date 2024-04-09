@@ -9,7 +9,7 @@ class ResCompany(models.Model):
     codification = fields.Char('Codification')
     source = fields.Char('source')
     name_pos = fields.Char('name')
-    adress_pos = fields.Char('adrs')
+    address_pos = fields.Char('adrs')
     pos_phone_one = fields.Char('phone')
     pos_phone_two = fields.Char('phone')
     pos_wilaya = fields.Char('wilaya')
