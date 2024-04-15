@@ -6,29 +6,29 @@
         <field name="model">res.company</field>
         <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
-                <xpath expr="//field[@name='currency_id']" position="after">
-                    <field name="domain"/>
-                    <field name="domain_cpa"/>
-                    <field name="codification"/>
-                    <field name="source"/>
-                </xpath>
-                <xpath expr="//div[@class='oe_title']" position="after">
-                     <div>
-                        <h1>
-                            <field name="pos" widget="checkbox"/>
-                        </h1>
-                    </div>
-                </xpath>
-             <xpath expr="//page[@name='general_info']" position="after">
-                     <page string="Informations Ekiclik" name="ek_info">
-                            <group>
-                                <group>
-                                    <field name="users" string="Utilisateurs" widget="many2many_tags"/>
-                                </group>
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <field name="domain"/>
+                <field name="domain_cpa"/>
+                <field name="codification"/>
+                <field name="source"/>
+            </xpath>
+            <xpath expr="//div[@class='oe_title']" position="after">
+                <div>
+                    <h1>
+                        <field name="pos" widget="boolean_checkbox" string="EK POS"/>
+                    </h1>
+                </div>
+            </xpath>
+            <xpath expr="//page[@name='general_info']" position="after">
+                <page string="Informations Ekiclik" name="ek_info">
+                    <group>
+                        <group>
+                            <field name="users" string="Utilisateurs" widget="many2many_tags"/>
+                        </group>
 
-                            </group>
-                        </page>
-                </xpath>
+                    </group>
+                </page>
+            </xpath>
 
         </field>
     </record>
