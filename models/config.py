@@ -16,6 +16,8 @@ class ResCompany(models.Model):
     pos_commune = fields.Char('commune')
     ek_user_emails = fields.Char('users')
     create_by = fields.Char('create_by')
+    pos = fields.Boolean(string="Pos")
+    users = fields.Many2many("res.users")
 
 
 class ResConfig(models.TransientModel):
