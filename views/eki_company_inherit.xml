@@ -20,7 +20,7 @@
                 </div>
             </xpath>
             <xpath expr="//page[@name='general_info']" position="after">
-                <page string="Informations Ekiclik" name="ek_info"  attrs="{'invisible' : [('ek_user', '=',False)]}">
+                <page string="Informations Ekiclik" name="ek_info"  attrs="{'invisible' : [('pos', '=',False)]}">
                     <group>
                         <group>
                             <field name="users" string="Utilisateurs" widget="many2many_tags"/>
