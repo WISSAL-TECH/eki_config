@@ -24,6 +24,8 @@
                     <group>
                         <group>
                             <field name="users" string="Utilisateurs" widget="many2many_tags"/>
+                            <field name="pos_wilaya"/>
+                            <field name="pos_commune"/>
                         </group>
 
                     </group>
