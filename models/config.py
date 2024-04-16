@@ -17,10 +17,8 @@ class ResCompany(models.Model):
     ek_user_emails = fields.Char('users')
     create_by = fields.Char('create_by')
     pos = fields.Boolean(string="Pos")
-    users = fields.Many2many("res.users", string="Credit analyst",
-                             domain=[('roles', '=', "ROLE_CREDIT_ANALYST_EK")], required=True)
-    pos_user = fields.Many2one("res.users", string="POS",
-                               domain=[('roles', '=', "ROLE_POS_EK")])
+    users = fields.Many2many("res.users", string="Credit analyst", required=True)
+    pos_user = fields.Many2one("res.users", string="POS")
 
 class ResConfig(models.TransientModel):
     _inherit = 'res.config.settings'
