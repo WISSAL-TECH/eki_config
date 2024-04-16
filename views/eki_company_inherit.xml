@@ -31,12 +31,7 @@
                     </group>
                 </page>
             </xpath>
-            <xpath expr="//field[@name='state_id']" position="replace">
-                <field name="pos_wilaya"/>
-            </xpath>
-            <xpath expr="//field[@name='city']" position="replace">
-                <field name="pos_commune"/>
-            </xpath>
+
 
         </field>
     </record>
