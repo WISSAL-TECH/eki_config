@@ -31,6 +31,9 @@
                     </group>
                 </page>
             </xpath>
+            <xpath expr="//field[@name='state_id']" position="replace">
+                <field name="wilaya"/>
+            </xpath>
 
         </field>
     </record>
