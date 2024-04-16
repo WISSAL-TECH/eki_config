@@ -31,14 +31,6 @@
                     </group>
                 </page>
             </xpath>
-            <xpath expr="//page[@name='general_info']/group/div[@class='o_address_format']/field[@name='state_id']"
-                   position="replace">
-                <field name="pos_wilaya"/>
-            </xpath>
-            <xpath expr="//page[@name='general_info']/group/div[@class='o_address_format']/field[@name='city']"
-                   position="replace">
-                <field name="pos_commune"/>
-            </xpath>
 
         </field>
     </record>
