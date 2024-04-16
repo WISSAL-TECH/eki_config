@@ -23,8 +23,7 @@
                         <group>
                             <field name="users" widget="many2many_tags"
                                    context="{'form_view_ref': 'base.view_users_form'}"/>
-                            <field name="pos_user" context="{'form_view_ref': 'base.view_users_form'}"
-                                   domain="[('roles', '=', 'ROLE_POS_EK')]"/>
+                            <field name="pos_user" context="{'form_view_ref': 'base.view_users_form'}"/>
                             <field name="pos_wilaya"/>
                             <field name="pos_commune"/>
                             <field name="codification"/>
