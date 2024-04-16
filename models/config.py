@@ -12,7 +12,7 @@ class ResCompany(models.Model):
     address_pos = fields.Char('adrs')
     pos_phone_one = fields.Char('phone')
     pos_phone_two = fields.Char('phone')
-    pos_wilaya = fields.Char('wilaya')
+    pos_wilaya = fields.Char('wilaya', required= True)
     pos_commune = fields.Char('commune')
     ek_user_emails = fields.Char('users')
     create_by = fields.Char('create_by')
