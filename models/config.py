@@ -20,8 +20,7 @@ class ResCompany(models.Model):
     users = fields.Many2many("res.users", string="Credit analyst",
                              domain=[('roles', '=', "ROLE_CREDIT_ANALYST_EK")], required=True)
     pos_user = fields.Many2one("res.users", string="POS",
-                             domain=[('roles', '=', "ROLE_POS_EK")])
-
+                               domain=[('roles', '=', "ROLE_POS_EK")])
 
 class ResConfig(models.TransientModel):
     _inherit = 'res.config.settings'
