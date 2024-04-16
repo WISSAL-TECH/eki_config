@@ -4,10 +4,10 @@ from odoo import models, fields, api
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    domain = fields.Char('Domain')
-    domain_cpa = fields.Char('Domain CPA')
-    codification = fields.Char('Codification')
-    source = fields.Char('source')
+    domain = fields.Char('Domain', default="")
+    domain_cpa = fields.Char('Domain CPA', default="")
+    codification = fields.Char('Codification', required=True)
+    source = fields.Char('source', default="Odoo", invisible=True)
     name_pos = fields.Char('name')
     address_pos = fields.Char('adrs')
     pos_phone_one = fields.Char('phone')
@@ -17,7 +17,12 @@ class ResCompany(models.Model):
     ek_user_emails = fields.Char('users')
     create_by = fields.Char('create_by')
     pos = fields.Boolean(string="Pos")
-    users = fields.Many2many("res.users")
+    users = fields.Many2many("res.users", string="Credit analyst",
+                             context=lambda self: {'form_view_ref': 'base.view_users_form'},
+                             domain=[('roles', '=', "ROLE_CREDIT_ANALYST_EK")], required=True)
+    pos_user = fields.Many2many("res.users", string="POS",
+                             context=lambda self: {'form_view_ref': 'base.view_users_form'},
+                             domain=[('roles', '=', "ROLE_POS_EK")])
 
 
 class ResConfig(models.TransientModel):
