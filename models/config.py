@@ -17,8 +17,17 @@ class ResCompany(models.Model):
     ek_user_emails = fields.Char('users')
     create_by = fields.Char('create_by')
     pos = fields.Boolean(string="Pos")
-    users = fields.Many2many("res.users", string="Credit analyst", required=True)
-    pos_user = fields.Many2one("res.users", string="POS")
+    users = fields.Many2one("res.users", string="Credit analyst", required=True)
+    pos_user = fields.Many2one("res.users", string="POS", required=True)
+    state_id = fields.Many2one(
+        'res.country.state', compute='_compute_address', inverse='_inverse_state',
+        string="Fed. State", domain="[('country_id', '=?', country_id)]", required=True
+    )
+    city = fields.Char(compute='_compute_address', inverse='_inverse_city', required=True)
+    street = fields.Char(compute='_compute_address', inverse='_inverse_street', required=True)
+    phone = fields.Char(related='partner_id.phone', store=True, readonly=False, required=True)
+
+
 
 class ResConfig(models.TransientModel):
     _inherit = 'res.config.settings'
