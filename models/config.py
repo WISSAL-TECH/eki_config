@@ -20,7 +20,7 @@ class ResCompany(models.Model):
     users = fields.Many2many("res.users", string="Credit analyst",
                              context=lambda self: {'form_view_ref': 'base.view_users_form'},
                              domain=[('roles', '=', "ROLE_CREDIT_ANALYST_EK")], required=True)
-    pos_user = fields.Many2many("res.users", string="POS",
+    pos_user = fields.Many2one("res.users", string="POS",
                              context=lambda self: {'form_view_ref': 'base.view_users_form'},
                              domain=[('roles', '=', "ROLE_POS_EK")])
 
