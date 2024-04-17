@@ -17,7 +17,7 @@ class ResCompany(models.Model):
     ek_user_emails = fields.Char('users')
     create_by = fields.Char('create_by')
     pos = fields.Boolean(string="Pos")
-    users = fields.Many2many("res.users", string="Credit analyst", required=True)
+    users = fields.Many2one("res.users", string="Credit analyst", required=True)
     pos_user = fields.Many2one("res.users", string="POS", required=True)
     state_id = fields.Many2one(
         'res.country.state', compute='_compute_address', inverse='_inverse_state',
