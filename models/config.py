@@ -7,7 +7,7 @@ class ResCompany(models.Model):
     domain = fields.Char('Domain', default="https://apiadmin-preprod-alsalam.ekiclik.dz")
     domain_cpa = fields.Char('Domain CPA', default="https://apiadmin.cpa-preprod.ekiclik.dz")
     codification = fields.Char('Codification', required=True)
-    source = fields.Char('source', default="Odoo", invisible=True)
+    source = fields.Char('source', default="odoo", invisible=True)
     name_pos = fields.Char('name')
     address_pos = fields.Char('adrs')
     pos_phone_one = fields.Char('phone')
