@@ -17,6 +17,12 @@
                     </group>
                 </div>
             </xpath>
+            <xpath expr="//form//sheet//notebook//page//group//group[1]//div[hasclass('o_address_format')]//field[@name='pos_commune']"
+                   position="replace">
+
+                <field name="pos_commune" placeholder="Commune ek"/>
+
+            </xpath>
             <xpath expr="//page[@name='general_info']" position="after">
                 <page string="Informations Ekiclik" name="ek_info" attrs="{'invisible' : [('pos', '=',False)]}">
                     <group>
