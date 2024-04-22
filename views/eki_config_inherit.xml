@@ -26,6 +26,12 @@
                     </div>
                 </div>
             </xpath>
+            <xpath expr="sheet/notebook/page[1]/group[1]/group[1]/div[hasclass('o_address_format')]/field[@name='city']"
+                   position="replace">
+
+                <field name="pos_commune" placeholder="Commune ek"/>
+
+            </xpath>
         </field>
     </record>
 
