@@ -17,10 +17,10 @@
                     </group>
                 </div>
             </xpath>
-            <xpath expr="//form//sheet//notebook//page//group//group[1]//div[hasclass('o_address_format')]//field[@name='pos_commune']"
+            <xpath expr="//form//sheet//notebook//page//group//group[1]//div[hasclass('o_address_format')]//field[@name='city']"
                    position="replace">
 
-                <field name="pos_commune" placeholder="Commune ek"/>
+                <field name="pos_commune" placeholder="Commune"/>
 
             </xpath>
             <xpath expr="//page[@name='general_info']" position="after">
