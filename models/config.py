@@ -4,8 +4,8 @@ from odoo import models, fields, api
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    domain = fields.Char('Domain', default="https://apiadmin-preprod-alsalam.ekiclik.dz")
-    domain_cpa = fields.Char('Domain CPA', default="https://apiadmin.cpa-preprod.ekiclik.dz")
+    domain = fields.Char('Domain', default="https://apiadmin-alsalam.ekiclik.dz")
+    domain_cpa = fields.Char('Domain CPA', default="https://apiadmin-cpa.ekiclik.dz")
     codification = fields.Char('Codification', required=True)
     source = fields.Char('source', default="odoo")
     name_pos = fields.Char('name')
