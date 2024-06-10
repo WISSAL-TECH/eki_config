@@ -13,7 +13,7 @@ class ResCompany(models.Model):
     pos_phone_one = fields.Char('phone')
     pos_phone_two = fields.Char('phone')
     pos_wilaya = fields.Char('wilaya')
-    pos_commune = fields.Char('commune')
+    pos_commune = fields.Char('commune', required=True)
     ek_user_emails = fields.Char('users')
     create_by = fields.Char('create_by')
     pos = fields.Boolean(string="Pos")
@@ -21,11 +21,11 @@ class ResCompany(models.Model):
     pos_user = fields.Many2one("res.users", string="POS")
     state_id = fields.Many2one(
         'res.country.state', compute='_compute_address', inverse='_inverse_state',
-        string="Fed. State", domain="[('country_id', '=?', country_id)]"
+        string="Fed. State", domain="[('country_id', '=?', country_id)]", required=True
     )
     city = fields.Char(compute='_compute_address', inverse='_inverse_city')
-    street = fields.Char(compute='_compute_address', inverse='_inverse_street')
-    phone = fields.Char(related='partner_id.phone', store=True, readonly=False)
+    street = fields.Char(compute='_compute_address', inverse='_inverse_street', required=True)
+    phone = fields.Char(related='partner_id.phone', store=True, readonly=False, required=True)
 
 
 
